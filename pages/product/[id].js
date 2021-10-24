@@ -1,6 +1,43 @@
 import axios from "axios";
 import { useRouter } from "next/router";
+import {
+  Grid,
+  Box,
+  Typography,
+  Button,
+  Rating,
+  Divider,
+  List,
+  ListSubheader,
+  ListItem,
+  ListItemText,
+  ListItemButton,
+  Collapse,
+  ListItemIcon,
+  styled,
+  Avatar,
+} from "@mui/material";
+
+import LinearProgress, {
+  linearProgressClasses,
+} from "@mui/material/LinearProgress";
+
+import {
+  ExpandMore as ExpandMoreIcon,
+  ExpandLess as ExpandLessIcon,
+  Https as HttpsIcon,
+  AccountBalanceWallet as AccountBalanceWalletIcon,
+  Replay as ReplayIcon,
+  DeliveryDining as DeliveryDiningIcon,
+  Security as SecurityIcon,
+  EmailOutlined as EmailOutlinedIcon,
+  Facebook as FacebookIcon,
+  Twitter as TwitterIcon,
+  Instagram as InstagramIcon,
+} from "@mui/icons-material";
+
 const productUrl = "https://nepalmartonline.herokuapp.com/api/v1/product";
+
 export async function getStaticPaths() {
   // Return a list of possible value for id
   // the list must be an array of objects with params key contain another object with the id key
@@ -53,8 +90,8 @@ export default function Product({ data }) {
 
   return (
     <div>
-      <h1>product display page</h1>
-      {/* <h1>{data.itemWithCatalog[0].data[0].name}</h1>; */}
+      <ExpandLessIcon />
+      <h1>{data.itemWithCatalog.name} display page</h1>
     </div>
   );
 }
