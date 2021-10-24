@@ -11,10 +11,12 @@ export default function Home() {
 
   useEffect(() => {
     const handleStart = (url) => {
-      console.log(`Loading: ${url}`);
+      // console.log(`Loading: ${url}`);
+      console.time("loading time");
       setLoading(true);
     };
     const handleStop = () => {
+      console.timeEnd("loading time");
       setLoading(false);
     };
 
